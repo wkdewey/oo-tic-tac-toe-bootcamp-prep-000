@@ -14,7 +14,7 @@ class TicTacToe
       rows[i] = "#{cells[3*i]}" + "|" + "#{cells[3*i + 1]}" + "|" + "#{cells[3*i + 2]}" + "\n"
     end
     print rows[0], separater, rows[1], separater, rows[2]
-end
+  end
 
 def input_to_index(input)
   index = input.to_i - 1
