@@ -47,13 +47,13 @@ def turn(board)
   end
 end
 
-def position_taken?(board, index)
-  if board[index] == " " || board[index] == "" || board[index] == nil
-    return false
-  elsif board[index] == "X" or board[index] || "O"
-    return true
+  def position_taken?(index)
+    if @board[index] == " " || @board[index] == "" || @board[index] == nil
+      return false
+    elsif @board[index] == "X" or @board[index] || "O"
+      return true
+    end
   end
-end
 
 def won?(board)
   WIN_COMBINATIONS.each do |win_combination|
