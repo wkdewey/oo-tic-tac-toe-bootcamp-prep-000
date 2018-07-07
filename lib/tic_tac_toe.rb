@@ -16,15 +16,15 @@ class TicTacToe
     print rows[0], separater, rows[1], separater, rows[2]
   end
 
-def input_to_index(input)
-  index = input.to_i - 1
-  return index
-end
+  def input_to_index(input)
+    index = input.to_i - 1
+    return index
+  end
 
-def move(board, index, character)
-  board[index] = character
-  return board
-end
+  def move(index, character)
+    @board[index] = character
+    return @board
+  end
 
 
 def valid_move?(board, index)
