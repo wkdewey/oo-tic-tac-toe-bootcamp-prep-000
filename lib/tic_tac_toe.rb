@@ -88,9 +88,9 @@ def winner(board)
   end
 end
 
-def turn_count(board)
+def turn_count
   turns = 0
-  board.each do |square|
+  @board.each do |square|
     if square == "X" || square == "O"
       turns += 1
     end
