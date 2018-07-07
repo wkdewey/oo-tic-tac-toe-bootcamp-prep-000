@@ -3,17 +3,17 @@ class TicTacToe
     @board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
   end
   
-  def display_board(board)
-  cells = []
-  rows = []
-  separater = "-----------" + "\n"
-  board.length.times do |i|
-    cells[i] = " #{board[i]} "
-  end
-  for i in 0..2
-    rows[i] = "#{cells[3*i]}" + "|" + "#{cells[3*i + 1]}" + "|" + "#{cells[3*i + 2]}" + "\n"
-  end
-  print rows[0], separater, rows[1], separater, rows[2]
+  def display_board
+    cells = []
+    rows = []
+    separater = "-----------" + "\n"
+    board.length.times do |i|
+      cells[i] = " #{@board[i]} "
+    end
+    for i in 0..2
+      rows[i] = "#{cells[3*i]}" + "|" + "#{cells[3*i + 1]}" + "|" + "#{cells[3*i + 2]}" + "\n"
+    end
+    print rows[0], separater, rows[1], separater, rows[2]
 end
 
 def input_to_index(input)
