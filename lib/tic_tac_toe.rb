@@ -35,17 +35,17 @@ class TicTacToe
     end
   end
 
-def turn(board)
-  puts "Please enter 1-9:"
-  input = gets
-  index = input_to_index(input)
-  if valid_move?(board, index)
-    move(board, index, current_player(board))
-    display_board(board)
-  else
-    turn(board)
+  def turn
+    puts "Please enter 1-9:"
+    input = gets
+    index = input_to_index(input)
+    if valid_move?(index)
+      move(index, current_player(board))
+      display_board
+    else
+      turn
+    end
   end
-end
 
   def position_taken?(index)
     if @board[index] == " " || @board[index] == "" || @board[index] == nil
