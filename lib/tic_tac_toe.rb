@@ -7,7 +7,7 @@ class TicTacToe
     cells = []
     rows = []
     separater = "-----------" + "\n"
-    board.length.times do |i|
+    @board.length.times do |i|
       cells[i] = " #{@board[i]} "
     end
     for i in 0..2
