@@ -88,32 +88,31 @@ class TicTacToe
     end
   end
 
-def turn_count
-  turns = 0
-  @board.each do |square|
-    if square == "X" || square == "O"
-      turns += 1
+  def turn_count
+    turns = 0
+    @board.each do |square|
+      if square == "X" || square == "O"
+        turns += 1
+      end
+    end
+    return turns
+  end
+
+  def current_player
+    return turn_count % 2 == 0 ? "X" : "O"
+  end
+
+  def play
+    until over?
+      turn
+    end
+  
+    if won?
+      puts "Congratulations #{winner}!"
+    else
+      puts "Cat's Game!"
     end
   end
-  return turns
-end
-
-def current_player
-  return turn_count % 2 == 0 ? "X" : "O"
-end
-
-def play(board)
-  until over?(board)
-    turn(board)
-  end
-  
-  if won?(board)
-    winner = winner(board)
-    puts "Congratulations #{winner}!"
-  else
-    puts "Cat's Game!"
-  end
-end
 # Define your WIN_COMBINATIONS constant
 WIN_COMBINATIONS = [[0, 1, 2],[3, 4, 5],[6, 7, 8],[0, 3, 6],[1, 4, 7],[2, 5, 8],[0, 4, 8],[2, 4, 6]]
 
